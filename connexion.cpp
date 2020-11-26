@@ -1,5 +1,7 @@
 #include "connexion.h"
 #include <QDebug>
+
+// test tutoriel git
 connexion::connexion()
 {
 
