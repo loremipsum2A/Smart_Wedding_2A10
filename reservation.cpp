@@ -44,5 +44,4 @@ return Model;
     query.prepare("Delete from RESERVATION where CIN= :CIN " );
     query.bindValue(":CIN",CIN_string);
    return query.exec();
-
 }

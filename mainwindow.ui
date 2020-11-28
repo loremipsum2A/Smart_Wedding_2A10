@@ -17,14 +17,15 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>20</y>
+      <x>30</x>
+      <y>10</y>
       <width>981</width>
-      <height>701</height>
+      <height>721</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);
+</string>
     </property>
     <property name="currentIndex">
      <number>0</number>
@@ -44,6 +45,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 85, 255);
+background-color: rgb(255, 255, 255);
 font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
       </property>
       <property name="title">
@@ -183,19 +185,19 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
         <string>ajouter</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QPushButton" name="modifier">
-      <property name="geometry">
-       <rect>
-        <x>490</x>
-        <y>470</y>
-        <width>93</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>modifier</string>
-      </property>
+      <widget class="QPushButton" name="modifier">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>230</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>modifier</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_5">
       <property name="geometry">
@@ -207,7 +209,8 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+       <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
       </property>
       <property name="title">
        <string>supprimer un client</string>
@@ -274,7 +277,8 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 170, 127);</string>
+        <string notr="true">background-color: rgb(255, 170, 127);
+background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton">
@@ -319,7 +323,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
       <widget class="QComboBox" name="comboBox_3">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>40</x>
          <y>330</y>
          <width>73</width>
          <height>22</height>
@@ -412,6 +416,9 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
          <height>22</height>
         </rect>
        </property>
+       <property name="text">
+        <string>258</string>
+       </property>
       </widget>
       <widget class="QPushButton" name="valider_reservation">
        <property name="geometry">
@@ -434,6 +441,9 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
          <width>113</width>
          <height>22</height>
         </rect>
+       </property>
+       <property name="text">
+        <string>123</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="date">
@@ -467,6 +477,9 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
          <width>113</width>
          <height>22</height>
         </rect>
+       </property>
+       <property name="text">
+        <string>1</string>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton_12">
@@ -503,6 +516,9 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
          <width>113</width>
          <height>22</height>
         </rect>
+       </property>
+       <property name="text">
+        <string>1</string>
        </property>
       </widget>
      </widget>
