@@ -26,9 +26,12 @@ public:
  QSqlQueryModel * afficher();
  bool supprimer(int);
  bool modifier(int,QString,QString,QString,int);
-
-QSqlQueryModel *recherchernom(QString );
+QSqlQueryModel *rechercher(QString);
   QSqlQueryModel *tri();
+  QSqlQueryModel* tri_CIN();
+   QSqlQueryModel* tri_Prenom();
+    QSqlQueryModel* tri_Nom();
+  QSqlQueryModel *shownomclient() ;
 private:
     int CIN,numero_de_telephone;
     QString Prenom,Nom,adresse_email;
