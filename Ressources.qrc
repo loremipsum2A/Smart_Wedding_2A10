@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/styleSheet">
+        <file>Integrid.qss</file>
+    </qresource>
+    <qresource prefix="/sons">
+        <file>click.wav</file>
+    </qresource>
+</RCC>

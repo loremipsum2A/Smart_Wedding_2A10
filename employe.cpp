@@ -2,23 +2,22 @@
 #include <QSqlQuery>
 #include <QDebug>
 #include <QObject>
-
+#include <QMessageBox>
 Employe::Employe()
 {
-  CIN=0;tel=0;duree=0;salaire=0;
+  CIN=0;tel=0;salaire=0;
   nom="";prenom="";date_naissance="";adresse="";email="";fonction="";etat="";
 
 }
 
-Employe::Employe(int CIN,int tel,int duree,int salaire,QString nom,QString prenom,QString date_naissance,QString adresse,QString email,QString fonction)
+Employe::Employe(int CIN,int tel,int salaire,QString nom,QString prenom,QString date_naissance,QString adresse,QString email,QString fonction)
 {
-    this->CIN=CIN; this->tel=tel; this->duree=duree; this->salaire=salaire;
+    this->CIN=CIN; this->tel=tel; this->salaire=salaire;
     this->nom=nom; this->prenom=prenom; this->date_naissance=date_naissance; this->adresse=adresse; this->email=email; this->fonction=fonction; etat="";
 }
 
 int Employe::getCIN() {return CIN;}
 int Employe::getTel(){return tel;}
-int Employe::getDuree(){return duree;}
 int Employe::getSalaire(){return salaire;}
 QString Employe::getNom(){return nom;}
 QString Employe::getPrenom(){return prenom;}
@@ -29,7 +28,6 @@ QString Employe::getFonction(){return fonction;}
 QString Employe::getEtat(){return etat;}
 void Employe::setCIN(int CIN){this->CIN=CIN; }
 void Employe::setTel(int tel){this->tel=tel;}
-void Employe::setDuree(int duree){this->duree=duree;}
 void Employe::setSalaire(int salaire){this->salaire=salaire;}
 void Employe::setNom(QString nom){this->nom=nom;}
 void Employe::setPrenom(QString prenom){this->prenom=prenom;}
@@ -45,12 +43,11 @@ bool Employe::ajouter()
 
     QString CIN_string=QString::number(CIN);
     QString tel_string=QString::number(tel);
-    QString duree_string=QString::number(duree);
     QString salaire_string=QString::number(salaire);
 
-          query.prepare("INSERT INTO EMPLOYE (CIN, NOM, PRENOM, DATE_NAISSANCE, ADRESSE, EMAIL, TEL, FONCTION, SALAIRE, DUREE)"
-                        "VALUES (:CIN, :nom, :prenom, :date_naissance, :adresse, :email, :tel, :fonction, :salaire, :duree)");
-          query.bindValue(0, CIN_string);
+          query.prepare("INSERT INTO EMPLOYE (CIN, NOM, PRENOM, DATE_NAISSANCE, ADRESSE, EMAIL, TEL, FONCTION, SALAIRE)"
+                        "VALUES (:CIN, :nom, :prenom, :date_naissance, :adresse, :email, :tel, :fonction, :salaire)");
+          query.bindValue(0, CIN);
           query.bindValue(1, nom);
           query.bindValue(2, prenom);
           query.bindValue(3, date_naissance);
@@ -59,7 +56,6 @@ bool Employe::ajouter()
           query.bindValue(6, tel_string);
           query.bindValue(7, fonction);
           query.bindValue(8, salaire_string);
-          query.bindValue(9, duree_string);
 
           return query.exec();
 }
@@ -77,42 +73,179 @@ QSqlQueryModel* Employe::afficher()
 bool Employe::supprimer(int CIN)
 {
     QSqlQuery query;
+    if (recherche(CIN))
+    {
 
           query.prepare("DELETE FROM EMPLOYE WHERE CIN=:CIN");
           query.bindValue(0, CIN);
+          QMessageBox msg;
+          msg.setText("suppression avec succes");
+          msg.exec();
 
+    }
           return query.exec();
-}
-
-QSqlQueryModel* Employe::rechercher(int CIN)
-{
-    QSqlQueryModel* model= new QSqlQueryModel();
-    QString CIN_string=QString::number(CIN);
-        model->setQuery("select * from EMPLOYE where CIN=CIN_string");
-        return model;
 }
 
 bool Employe::modifier(int CIN)
 {
     QSqlQuery query;
-
     QString CIN_string=QString::number(CIN);
     QString tel_string=QString::number(tel);
-    QString duree_string=QString::number(duree);
     QString salaire_string=QString::number(salaire);
+    if (recherche(CIN))
+    {
 
-    query.prepare("UPDATE EMPLOYE SET NOM='"+nom+"', PRENOM='"+prenom+"', DATE_NAISSANCE='"+date_naissance+"', ADRESSE='"+adresse+"', EMAIL='"+email+"', TEL='"+tel_string+"', FONCTION='"+fonction+"', SALAIRE='"+salaire_string+"', DUREE='"+duree_string+"' WHERE CIN='"+CIN_string+"'");
-    /*query.bindValue(":cin", CIN);
+          query.prepare("UPDATE EMPLOYE SET NOM=:nom, PRENOM=:prenom, DATE_NAISSANCE=:date_naissance, ADRESSE=:adresse, EMAIL=:email, TEL=:tel, FONCTION=:fonction, SALAIRE=:salaire WHERE CIN=:cin");
+          query.bindValue(":nom",nom);
+          query.bindValue(":prenom",prenom);
+          query.bindValue(":date_naissance",date_naissance);
+          query.bindValue(":adresse",adresse);
+          query.bindValue(":email",email);
+          query.bindValue(":tel",tel_string);
+          query.bindValue(":fonction",fonction);
+          query.bindValue(":salaire",salaire_string);
+          query.bindValue(":cin",CIN_string);
+
+    }
+          return query.exec();
+}
+
+bool Employe::recherche(int cin)
+{
+
+    QMessageBox msgBox;
+    QSqlQuery query;
+     QString CIN_string=QString::number(cin);
+    query.prepare("SELECT * FROM EMPLOYE WHERE CIN= :cin");
+    query.bindValue(":cin", CIN_string);
+    if (query.exec() && query.next())
+    {
+            return true;
+
+    }
+    else
+    {
+
+        msgBox.setText("non existant");
+        msgBox.exec();
+        return false;
+    }
+}
+
+QSqlQueryModel* Employe::afficher_cin(int cin)
+{
+    QSqlQueryModel* model= new QSqlQueryModel();
+    QString CIN_string=QString::number(cin);
+
+          model->setQuery("SELECT * FROM EMPLOYE WHERE CIN='"+CIN_string+"'");
+
+    return model;
+}
+
+bool Employe::recherche_nom(QString nom)
+{
+    QMessageBox msgBox;
+    QSqlQuery query;
+
+    query.prepare("SELECT * FROM EMPLOYE WHERE NOM= :nom");
     query.bindValue(":nom", nom);
+    if (query.exec() && query.next())
+    {
+            return true;
+
+    }
+    else
+    {
+
+        msgBox.setText("non existant");
+        msgBox.exec();
+        return false;
+    }
+}
+
+QSqlQueryModel* Employe::afficher_nom(QString nom)
+{
+    QSqlQueryModel* model= new QSqlQueryModel();
+
+          model->setQuery("SELECT * FROM EMPLOYE WHERE NOM='"+nom+"'");
+
+    return model;
+}
+
+bool Employe::recherche_prenom(QString prenom)
+{
+    QMessageBox msgBox;
+    QSqlQuery query;
+
+    query.prepare("SELECT * FROM EMPLOYE WHERE PRENOM= :prenom");
     query.bindValue(":prenom", prenom);
-    query.bindValue(":date_naissance", date_naissance);
-    query.bindValue(":adresse", adresse);
-    query.bindValue(":email", email);
-    query.bindValue(":tel", tel_string);
-    query.bindValue(":fonction", fonction);
-    query.bindValue(":salaire", salaire_string);
-    query.bindValue(":duree", duree_string);*/
+    if (query.exec() && query.next())
+    {
+            return true;
 
-    return query.exec();
+    }
+    else
+    {
 
+        msgBox.setText("non existant");
+        msgBox.exec();
+        return false;
+    }
+}
+
+QSqlQueryModel* Employe::afficher_prenom(QString prenom)
+{
+    QSqlQueryModel* model= new QSqlQueryModel();
+
+          model->setQuery("SELECT * FROM EMPLOYE WHERE PRENOM='"+prenom+"'");
+
+    return model;
+}
+
+QSqlQueryModel* Employe::tri_cin()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+        model->setQuery("SELECT * FROM EMPLOYE ORDER BY CIN ASC");
+
+    return model;
+}
+
+QSqlQueryModel* Employe::tri_nom()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+        model->setQuery("SELECT * FROM EMPLOYE ORDER BY NOM ASC");
+
+    return model;
+}
+
+QSqlQueryModel* Employe::tri_prenom()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+        model->setQuery("SELECT * FROM EMPLOYE ORDER BY PRENOM ASC");
+
+    return model;
+}
+
+bool Employe::recherche_admin(QString cin)
+{
+    QMessageBox msgBox;
+    QSqlQuery query;
+
+    query.prepare("SELECT * FROM EMPLOYE WHERE CIN= :cin");
+    query.bindValue(":cin", cin);
+    if (query.exec() && query.next() && query.value(7).toString()=="admin")
+    {
+            return true;
+
+    }
+    else
+    {
+
+        msgBox.setText("non existant ou non admin");
+        msgBox.exec();
+        return false;
+    }
 }

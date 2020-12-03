@@ -6,15 +6,14 @@
 class Employe
 {
 private:
-    int CIN,tel,duree,salaire;
+    int CIN,tel,salaire;
     QString nom,prenom,date_naissance,adresse,email,fonction,etat;
 
 public:
     Employe();
-    Employe(int,int,int,int,QString,QString,QString,QString,QString,QString);
+    Employe(int,int,int,QString,QString,QString,QString,QString,QString);
     int getCIN();
     int getTel();
-    int getDuree();
     int getSalaire();
     QString getNom();
     QString getPrenom();
@@ -25,7 +24,6 @@ public:
     QString getEtat();
     void setCIN(int);
     void setTel(int);
-    void setDuree(int);
     void setSalaire(int);
     void setNom(QString);
     void setPrenom(QString);
@@ -37,8 +35,17 @@ public:
     bool ajouter();
     QSqlQueryModel* afficher();
     bool supprimer(int);
-    QSqlQueryModel* rechercher(int);
     bool modifier(int);
+    bool recherche(int);
+    bool recherche_nom(QString);
+    bool recherche_prenom(QString);
+    QSqlQueryModel* afficher_cin(int);
+    QSqlQueryModel* afficher_nom(QString);
+    QSqlQueryModel* afficher_prenom(QString);
+    QSqlQueryModel* tri_cin();
+    QSqlQueryModel* tri_nom();
+    QSqlQueryModel* tri_prenom();
+    bool recherche_admin(QString);
 };
 
 #endif // EMPLOYE_H

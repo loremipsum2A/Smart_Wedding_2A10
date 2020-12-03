@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>804</width>
-    <height>560</height>
+    <width>900</width>
+    <height>606</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Gestion des employés</string>
   </property>
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
@@ -21,6 +21,9 @@
      <width>681</width>
      <height>521</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <property name="currentIndex">
     <number>0</number>
@@ -38,6 +41,9 @@
        <height>371</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="title">
       <string>Ajouter un employé</string>
      </property>
@@ -49,6 +55,9 @@
         <width>55</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>CIN</string>
@@ -63,6 +72,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>nom</string>
       </property>
@@ -76,6 +88,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>prénom</string>
       </property>
@@ -83,11 +98,14 @@
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>20</x>
         <y>200</y>
-        <width>111</width>
+        <width>121</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>date de naissance</string>
@@ -102,6 +120,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>adresse</string>
       </property>
@@ -114,6 +135,9 @@
         <width>55</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>email</string>
@@ -128,6 +152,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>fonction</string>
       </property>
@@ -141,6 +168,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>salaire</string>
       </property>
@@ -150,9 +180,12 @@
        <rect>
         <x>30</x>
         <y>330</y>
-        <width>61</width>
+        <width>81</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>téléphone</string>
@@ -228,16 +261,6 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="fonction_ajouter">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>70</y>
-        <width>113</width>
-        <height>22</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="salaire_ajouter">
       <property name="geometry">
        <rect>
@@ -251,35 +274,25 @@
      <widget class="QPushButton" name="btajouter_emp">
       <property name="geometry">
        <rect>
-        <x>350</x>
-        <y>250</y>
+        <x>360</x>
+        <y>200</y>
         <width>93</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Ajouter</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_22">
+     <widget class="QComboBox" name="comboBox_fct">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>170</y>
-        <width>101</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Durée de travail</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="dureetr_ajouter">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>170</y>
-        <width>71</width>
+        <x>390</x>
+        <y>70</y>
+        <width>111</width>
         <height>22</height>
        </rect>
       </property>
@@ -293,6 +306,9 @@
        <width>93</width>
        <height>28</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Quitter</string>
@@ -312,6 +328,9 @@
        <height>401</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="title">
       <string>Affichage </string>
      </property>
@@ -324,100 +343,124 @@
         <height>221</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="bt_imprimer">
       <property name="geometry">
        <rect>
-        <x>440</x>
-        <y>300</y>
+        <x>410</x>
+        <y>350</y>
         <width>93</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Imprimer</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="cin_rechercher">
+     <widget class="QPushButton" name="recherche_multicritere">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>290</y>
-        <width>113</width>
-        <height>22</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="geometry">
-       <rect>
-        <x>190</x>
-        <y>320</y>
+        <x>210</x>
+        <y>300</y>
         <width>93</width>
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>Rechercher</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="prenom_rechercher">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>320</y>
-        <width>113</width>
-        <height>22</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="nom_rechercher">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>350</y>
-        <width>113</width>
-        <height>22</height>
-       </rect>
       </property>
      </widget>
      <widget class="QLabel" name="label_20">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>290</y>
+        <y>300</y>
         <width>55</width>
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
-       <string>CIN</string>
+       <string>Critère</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_23">
+     <widget class="QPushButton" name="tri_multicritere">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>340</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Trier</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_critere">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>300</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>320</y>
+        <y>360</y>
         <width>55</width>
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
-       <string>Prenom</string>
+       <string>Valeur</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_24">
+     <widget class="QLineEdit" name="le_valeur">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>350</y>
-        <width>55</width>
-        <height>16</height>
+        <x>60</x>
+        <y>360</y>
+        <width>113</width>
+        <height>22</height>
        </rect>
       </property>
+     </widget>
+     <widget class="QPushButton" name="bt_pdf">
+      <property name="geometry">
+       <rect>
+        <x>372</x>
+        <y>300</y>
+        <width>151</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
-       <string>Nom</string>
+       <string>Enregistrer sous PDF</string>
       </property>
      </widget>
     </widget>
@@ -429,6 +472,9 @@
        <width>93</width>
        <height>28</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Quitter</string>
@@ -448,6 +494,9 @@
        <height>341</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="title">
       <string>Modifier un employé</string>
      </property>
@@ -459,6 +508,9 @@
         <width>55</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>CIN </string>
@@ -473,6 +525,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>nom</string>
       </property>
@@ -480,11 +535,14 @@
      <widget class="QLabel" name="label_13">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>140</y>
+        <x>30</x>
+        <y>130</y>
         <width>55</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>prénom</string>
@@ -499,6 +557,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>date de naissance</string>
       </property>
@@ -511,6 +572,9 @@
         <width>55</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>adresse</string>
@@ -525,6 +589,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>email</string>
       </property>
@@ -537,6 +604,9 @@
         <width>71</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>téléphone</string>
@@ -551,6 +621,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>fonction</string>
       </property>
@@ -563,6 +636,9 @@
         <width>55</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>salaire</string>
@@ -628,16 +704,6 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="fonction_modifier">
-      <property name="geometry">
-       <rect>
-        <x>400</x>
-        <y>100</y>
-        <width>113</width>
-        <height>22</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="salaire_modifier">
       <property name="geometry">
        <rect>
@@ -651,50 +717,17 @@
      <widget class="QPushButton" name="btmod_emp">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>280</y>
+        <x>370</x>
+        <y>270</y>
         <width>93</width>
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>Modifier</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_9">
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>280</y>
-        <width>141</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Actualiser titularisation</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_21">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>200</y>
-        <width>101</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Durée de travail</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="dureetr_modifier">
-      <property name="geometry">
-       <rect>
-        <x>430</x>
-        <y>200</y>
-        <width>81</width>
-        <height>22</height>
-       </rect>
       </property>
      </widget>
      <widget class="QLineEdit" name="cin_modifier">
@@ -703,6 +736,32 @@
         <x>150</x>
         <y>40</y>
         <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>40</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Rechercher</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_fct_2">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>100</y>
+        <width>111</width>
         <height>22</height>
        </rect>
       </property>
@@ -716,6 +775,9 @@
        <width>93</width>
        <height>28</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Quitter</string>
@@ -735,17 +797,23 @@
        <height>341</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="title">
       <string>Supprimer un employé</string>
      </property>
      <widget class="QPushButton" name="btsupp_emp">
       <property name="geometry">
        <rect>
-        <x>280</x>
+        <x>290</x>
         <y>60</y>
         <width>93</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Supprimer</string>
@@ -770,12 +838,31 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>CIN</string>
       </property>
      </widget>
     </widget>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="bt_gonext">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>50</y>
+     <width>141</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Gestion des congés</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -1,53 +1,113 @@
 #include "conge.h"
+#include "employe.h"
 #include <QSqlQuery>
 #include <QDebug>
 #include <QObject>
+#include <QMessageBox>
 
 Conge::Conge()
 {
-  ref=0; duree_c=0;
-  date_c=""; motif=""; etat_c="";
+  ref=0; CIN=0;
+  date_deb=""; date_fin=""; motif=""; etat_c="en cours";
 }
 
-Conge::Conge(int ref,QString date_c,int duree_c,QString motif)
+Conge::Conge(int ref,int CIN,QString date_deb,QString date_fin,QString motif)
 {
-    this->ref=ref; this->duree_c=duree_c;
-    this->date_c=date_c; this->motif=motif;
+    this->ref=ref; this->CIN=CIN; this->date_deb=date_deb;
+    this->date_fin=date_fin; this->motif=motif; etat_c="en cours";
 }
 int Conge::getRef(){return ref;}
-int Conge::getDuree_c(){return duree_c;}
-QString Conge::getDate_c(){return date_c;}
+QString Conge::getDate_deb(){return date_deb;}
+QString Conge::getDate_fin(){return date_fin;}
 QString Conge::getMotif(){return motif;}
 QString Conge::getEtat_c(){return etat_c;}
 void Conge::setRef(int ref){this->ref=ref;}
-void Conge::setDuree_c(int duree_c){this->duree_c=duree_c;}
-void Conge::setDate_c(QString date_c){this->date_c=date_c;}
+void Conge::setDate_deb(QString date_deb){this->date_deb=date_deb;}
+void Conge::setDate_fin(QString date_fin){this->date_fin=date_fin;}
 void Conge::setMotif(QString motif){this->motif=motif;}
 void Conge::setEtat_c(QString etat_c){this->etat_c=etat_c;}
+
 bool Conge::ajouter()
 {
     QSqlQuery query;
 
     QString ref_string=QString::number(ref);
-    QString duree_c_string=QString::number(duree_c);
+    QString CIN_string=QString::number(CIN);
 
 
-          query.prepare("INSERT INTO CONGE (REF, DATE_C, DUREE_C, MOTIF)"
-                        "VALUES (:ref, :date_c, :duree_c, :motif)");
-          query.bindValue(0, ref_string);
-          query.bindValue(1, date_c);
-          query.bindValue(2, duree_c_string);
-          query.bindValue(3, motif);
+          query.prepare("INSERT INTO CONGE (REF, DATE_DEBUT, MOTIF,ETAT, CIN, DATE_FIN)"
+                        "VALUES (:ref, :date_debut, :motif,:etat, :cin, :date_fin)");
+          query.bindValue(":ref", ref_string);
+          query.bindValue(":date_debut", date_deb);
+          query.bindValue(":motif", motif);
+          query.bindValue(":etat", etat_c);
+          query.bindValue(":cin", CIN_string);
+          query.bindValue(":date_fin", date_fin);
 
           return query.exec();
 }
-QSqlQueryModel* Conge::afficher()
+
+bool Conge::rechercher(int cin)
+{
+    QMessageBox msgBox;
+    QSqlQuery query;
+     QString CIN_string=QString::number(cin);
+    query.prepare("SELECT * FROM CONGE WHERE CIN= :cin");
+    query.bindValue(":cin", CIN_string);
+    if (query.exec() && query.next())
+    {
+            return true;
+
+    }
+    else
+    {
+
+        msgBox.setText("non existant");
+        msgBox.exec();
+        return false;
+    }
+}
+
+QSqlQueryModel* Conge::afficher_mesconges(int cin)
 {
     QSqlQueryModel* model= new QSqlQueryModel();
+    QString CIN_string=QString::number(cin);
 
-          model->setQuery("SELECT * FROM CONGE");
-          //model->setHeaderData(0, Qt::Horizontal, QObject::tr("Name"));
-          //model->setHeaderData(1, Qt::Horizontal, QObject::tr("Salary"));
+          model->setQuery("SELECT * FROM CONGE WHERE CIN='"+CIN_string+"'");
+
     return model;
 }
 
+QSqlQueryModel* Conge::afficher_admin(QString etat)
+{
+    QSqlQueryModel* model= new QSqlQueryModel();
+
+          model->setQuery("SELECT * FROM CONGE WHERE ETAT='"+etat+"'");
+
+    return model;
+}
+
+bool Conge::rechercher_ref(int ref,QString etat)
+{
+    QMessageBox msgBox;
+    QSqlQuery query;
+     QString ref_string=QString::number(ref);
+    query.prepare("SELECT * FROM CONGE WHERE REF= :ref");
+    query.bindValue(":ref", ref_string);
+    if (query.exec() && query.next())
+    {
+        query.prepare("UPDATE CONGE SET ETAT=:etat WHERE REF=:ref");
+        query.bindValue(":etat",etat);
+        query.bindValue(":ref",ref_string);
+        query.exec();
+        return true;
+
+    }
+    else
+    {
+
+        msgBox.setText("non existant");
+        msgBox.exec();
+        return false;
+    }
+}

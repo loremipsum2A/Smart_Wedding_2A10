@@ -5,6 +5,7 @@
 #include <QDebug>
 #include "connection.h"
 #include <QApplication>
+#include <QFile>
 
 int main(int argc, char *argv[])
 {
@@ -16,6 +17,11 @@ int main(int argc, char *argv[])
     gestion_emp ge;
     gestion_cong gc;
 
+    QFile styleSheetFile(":/styleSheet/Integrid.qss");
+        styleSheetFile.open(QFile::ReadOnly);
+        QString styleSheet = QLatin1String(styleSheetFile.readAll());
+        a.setStyleSheet(styleSheet);
+
     if (test)
         //qDebug() <<"Connexion reussite";
    // w.show();
@@ -26,8 +32,8 @@ int main(int argc, char *argv[])
         //qDebug() <<"erreur de connexion";
         QMessageBox::critical(nullptr, QObject::tr("Database is not open"), QObject::tr("Connection failed\nClick cancel to exit"), QMessageBox::Cancel);
 
-       //ge.show();
-     gc.show();
+     ge.show();
+     //gc.show();
 
     return a.exec();
 }
