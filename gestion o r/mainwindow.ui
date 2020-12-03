@@ -23,6 +23,12 @@
       <height>521</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>French Script MT</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="currentIndex">
      <number>0</number>
     </property>
@@ -39,6 +45,14 @@
         <height>501</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>French Script MT</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
@@ -52,12 +66,15 @@
           <x>40</x>
           <y>50</y>
           <width>171</width>
-          <height>16</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>French Script MT</family>
+          <pointsize>20</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -70,12 +87,15 @@
           <x>40</x>
           <y>280</y>
           <width>171</width>
-          <height>16</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>French Script MT</family>
+          <pointsize>20</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -88,12 +108,15 @@
           <x>40</x>
           <y>330</y>
           <width>171</width>
-          <height>16</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>French Script MT</family>
+          <pointsize>20</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -104,14 +127,17 @@
         <property name="geometry">
          <rect>
           <x>40</x>
-          <y>380</y>
+          <y>375</y>
           <width>171</width>
-          <height>16</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>French Script MT</family>
+          <pointsize>20</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -144,76 +170,25 @@
          <string/>
         </property>
        </widget>
-       <widget class="QLabel" name="label_35">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>200</y>
-          <width>181</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Salle :</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_41">
         <property name="geometry">
          <rect>
           <x>40</x>
           <y>100</y>
           <width>191</width>
-          <height>16</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>French Script MT</family>
+          <pointsize>20</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
          <string>Troupe :</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_42">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>150</y>
-          <width>191</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Decorateur :</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_43">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>240</y>
-          <width>181</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Buffet :</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton_7">
@@ -224,6 +199,14 @@
           <width>93</width>
           <height>28</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Franklin Gothic Medium Cond</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
         </property>
         <property name="text">
          <string>Ajouter</string>
@@ -293,14 +276,85 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>20</y>
+          <y>10</y>
           <width>741</width>
-          <height>431</height>
+          <height>441</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>French Script MT</family>
+          <pointsize>18</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
         </property>
         <property name="title">
          <string>Ajouter</string>
         </property>
+        <widget class="QLabel" name="label_42">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>120</y>
+           <width>191</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>French Script MT</family>
+           <pointsize>20</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Decorateur :</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_35">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>160</y>
+           <width>181</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>French Script MT</family>
+           <pointsize>20</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Salle :</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_43">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>210</y>
+           <width>181</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>French Script MT</family>
+           <pointsize>20</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Buffet :</string>
+         </property>
+        </widget>
        </widget>
        <zorder>groupBox</zorder>
        <zorder>label_4</zorder>
@@ -309,10 +363,7 @@
        <zorder>label_30</zorder>
        <zorder>le_num_3</zorder>
        <zorder>le_prix_3</zorder>
-       <zorder>label_35</zorder>
        <zorder>label_41</zorder>
-       <zorder>label_42</zorder>
-       <zorder>label_43</zorder>
        <zorder>pushButton_7</zorder>
        <zorder>lineEdit_11</zorder>
        <zorder>lineEdit_13</zorder>
@@ -333,6 +384,14 @@
           <width>571</width>
           <height>421</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>French Script MT</family>
+          <pointsize>18</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
         </property>
         <property name="title">
          <string>Afficher</string>
@@ -366,6 +425,14 @@
            <height>28</height>
           </rect>
          </property>
+         <property name="font">
+          <font>
+           <family>Franklin Gothic Medium</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="text">
           <string>Imprimer</string>
          </property>
@@ -378,6 +445,14 @@
            <width>161</width>
            <height>22</height>
           </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Franklin Gothic Medium</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
          </property>
          <item>
           <property name="text">
@@ -404,13 +479,42 @@
          <property name="geometry">
           <rect>
            <x>170</x>
-           <y>290</y>
-           <width>131</width>
-           <height>20</height>
+           <y>279</y>
+           <width>141</width>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>French Script MT</family>
+           <pointsize>20</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
          </property>
          <property name="text">
           <string>Recherche:</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushPDF">
+         <property name="geometry">
+          <rect>
+           <x>350</x>
+           <y>380</y>
+           <width>93</width>
+           <height>28</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Franklin Gothic Medium</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>PDF</string>
          </property>
         </widget>
        </widget>
@@ -418,14 +522,17 @@
         <property name="geometry">
          <rect>
           <x>640</x>
-          <y>90</y>
+          <y>86</y>
           <width>101</width>
-          <height>16</height>
+          <height>20</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>French Script MT</family>
+          <pointsize>16</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -448,12 +555,15 @@
           <x>640</x>
           <y>270</y>
           <width>91</width>
-          <height>16</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>French Script MT</family>
+          <pointsize>16</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -464,50 +574,38 @@
         <property name="geometry">
          <rect>
           <x>640</x>
-          <y>140</y>
+          <y>135</y>
           <width>101</width>
-          <height>16</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>French Script MT</family>
+          <pointsize>16</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
          <string>Decorateur :</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_45">
-        <property name="geometry">
-         <rect>
-          <x>640</x>
-          <y>40</y>
-          <width>111</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Num d'offre :</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_59">
         <property name="geometry">
          <rect>
           <x>640</x>
-          <y>230</y>
+          <y>225</y>
           <width>101</width>
-          <height>16</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>French Script MT</family>
+          <pointsize>16</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -528,14 +626,17 @@
         <property name="geometry">
          <rect>
           <x>640</x>
-          <y>190</y>
+          <y>185</y>
           <width>91</width>
-          <height>16</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>French Script MT</family>
+          <pointsize>16</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -548,12 +649,15 @@
           <x>640</x>
           <y>370</y>
           <width>101</width>
-          <height>16</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>French Script MT</family>
+          <pointsize>16</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -566,12 +670,15 @@
           <x>640</x>
           <y>320</y>
           <width>111</width>
-          <height>16</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>French Script MT</family>
+          <pointsize>16</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -582,10 +689,18 @@
         <property name="geometry">
          <rect>
           <x>610</x>
-          <y>20</y>
+          <y>10</y>
           <width>431</width>
-          <height>431</height>
+          <height>441</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>French Script MT</family>
+          <pointsize>18</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
         </property>
         <property name="title">
          <string>Modifier</string>
@@ -627,7 +742,7 @@
          <property name="geometry">
           <rect>
            <x>160</x>
-           <y>160</y>
+           <y>170</y>
            <width>131</width>
            <height>22</height>
           </rect>
@@ -644,10 +759,13 @@
          </property>
         </widget>
         <widget class="QLineEdit" name="lineEdit_39">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="geometry">
           <rect>
-           <x>190</x>
-           <y>20</y>
+           <x>200</x>
+           <y>30</y>
            <width>41</width>
            <height>22</height>
           </rect>
@@ -665,6 +783,14 @@
            <height>28</height>
           </rect>
          </property>
+         <property name="font">
+          <font>
+           <family>Franklin Gothic Medium</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="text">
           <string>Modifier</string>
          </property>
@@ -678,11 +804,51 @@
            <height>28</height>
           </rect>
          </property>
+         <property name="font">
+          <font>
+           <family>Franklin Gothic Medium</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="text">
           <string>Delete</string>
          </property>
         </widget>
+        <widget class="QLabel" name="label_45">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>30</y>
+           <width>111</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>French Script MT</family>
+           <pointsize>16</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Num d'offre :</string>
+         </property>
+        </widget>
        </widget>
+       <zorder>groupBox_4</zorder>
+       <zorder>groupBox_2</zorder>
+       <zorder>label_56</zorder>
+       <zorder>comboBox_17</zorder>
+       <zorder>label_57</zorder>
+       <zorder>label_58</zorder>
+       <zorder>label_59</zorder>
+       <zorder>comboBox_18</zorder>
+       <zorder>label_60</zorder>
+       <zorder>label_47</zorder>
+       <zorder>label_61</zorder>
       </widget>
      </widget>
     </widget>
@@ -699,119 +865,36 @@
         <height>501</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>French Script MT</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
         <string>Ajouter</string>
        </attribute>
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>80</x>
-          <y>50</y>
-          <width>161</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Ref_reclamation :</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_5">
-        <property name="geometry">
-         <rect>
-          <x>80</x>
-          <y>90</y>
-          <width>171</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Adresse électronique :</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_6">
-        <property name="geometry">
-         <rect>
-          <x>80</x>
-          <y>140</y>
-          <width>171</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Sujet du reclamation :</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_7">
         <property name="geometry">
          <rect>
           <x>80</x>
           <y>230</y>
           <width>171</width>
-          <height>16</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>French Script MT</family>
+          <pointsize>20</pointsize>
          </font>
         </property>
         <property name="text">
          <string>Description :</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_5">
-        <property name="geometry">
-         <rect>
-          <x>350</x>
-          <y>50</y>
-          <width>231</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_6">
-        <property name="geometry">
-         <rect>
-          <x>350</x>
-          <y>90</y>
-          <width>231</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_21">
-        <property name="geometry">
-         <rect>
-          <x>480</x>
-          <y>330</y>
-          <width>93</width>
-          <height>28</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Ajouter</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEdit_15">
@@ -819,26 +902,6 @@
          <rect>
           <x>350</x>
           <y>140</y>
-          <width>231</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit">
-        <property name="geometry">
-         <rect>
-          <x>350</x>
-          <y>180</y>
-          <width>231</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_2">
-        <property name="geometry">
-         <rect>
-          <x>350</x>
-          <y>230</y>
           <width>231</width>
           <height>22</height>
          </rect>
@@ -853,6 +916,12 @@
           <height>431</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <family>French Script MT</family>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
         <property name="title">
          <string>Ajout</string>
         </property>
@@ -860,32 +929,112 @@
          <property name="geometry">
           <rect>
            <x>20</x>
-           <y>180</y>
-           <width>161</width>
-           <height>16</height>
+           <y>175</y>
+           <width>191</width>
+           <height>31</height>
           </rect>
          </property>
          <property name="font">
           <font>
+           <family>French Script MT</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Date_reclamation :</string>
+         </property>
+        </widget>
+        <widget class="QDateEdit" name="dateEdit">
+         <property name="geometry">
+          <rect>
+           <x>290</x>
+           <y>180</y>
+           <width>231</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_6">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>130</y>
+           <width>211</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>French Script MT</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Sujet du reclamation :</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_2">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>80</y>
+           <width>171</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>French Script MT</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Ref_reclamation :</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_5">
+         <property name="geometry">
+          <rect>
+           <x>290</x>
+           <y>80</y>
+           <width>231</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="textEdit">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>230</y>
+           <width>381</width>
+           <height>141</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_21">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>390</y>
+           <width>93</width>
+           <height>28</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Franklin Gothic Medium</family>
            <pointsize>10</pointsize>
           </font>
          </property>
          <property name="text">
-          <string>Date_rec :</string>
+          <string>Ajouter</string>
          </property>
         </widget>
        </widget>
        <zorder>groupBox_6</zorder>
-       <zorder>label_2</zorder>
-       <zorder>label_5</zorder>
-       <zorder>label_6</zorder>
        <zorder>label_7</zorder>
-       <zorder>lineEdit_5</zorder>
-       <zorder>lineEdit_6</zorder>
-       <zorder>pushButton_21</zorder>
        <zorder>lineEdit_15</zorder>
-       <zorder>lineEdit</zorder>
-       <zorder>lineEdit_2</zorder>
       </widget>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -897,8 +1046,14 @@
           <x>0</x>
           <y>10</y>
           <width>1111</width>
-          <height>451</height>
+          <height>481</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>French Script MT</family>
+          <pointsize>18</pointsize>
+         </font>
         </property>
         <property name="title">
          <string>Afficher</string>
@@ -913,90 +1068,13 @@
           </rect>
          </property>
         </widget>
-        <widget class="QLabel" name="label_14">
-         <property name="geometry">
-          <rect>
-           <x>570</x>
-           <y>120</y>
-           <width>171</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Adresse électronique :</string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="lineEdit_12">
-         <property name="geometry">
-          <rect>
-           <x>830</x>
-           <y>120</y>
-           <width>231</width>
-           <height>22</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_15">
-         <property name="geometry">
-          <rect>
-           <x>570</x>
-           <y>80</y>
-           <width>161</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Ref_reclamation :</string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="lineEdit_14">
-         <property name="geometry">
-          <rect>
-           <x>830</x>
-           <y>80</y>
-           <width>231</width>
-           <height>22</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_16">
-         <property name="geometry">
-          <rect>
-           <x>570</x>
-           <y>160</y>
-           <width>171</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Sujet du reclamation :</string>
-         </property>
-        </widget>
         <widget class="QGroupBox" name="groupBox_5">
          <property name="geometry">
           <rect>
            <x>540</x>
            <y>30</y>
            <width>551</width>
-           <height>391</height>
+           <height>441</height>
           </rect>
          </property>
          <property name="title">
@@ -1006,10 +1084,16 @@
           <property name="geometry">
            <rect>
             <x>350</x>
-            <y>290</y>
+            <y>380</y>
             <width>93</width>
             <height>28</height>
            </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Franklin Gothic Medium</family>
+            <pointsize>10</pointsize>
+           </font>
           </property>
           <property name="text">
            <string>Delete</string>
@@ -1019,10 +1103,16 @@
           <property name="geometry">
            <rect>
             <x>230</x>
-            <y>290</y>
+            <y>380</y>
             <width>93</width>
             <height>28</height>
            </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Franklin Gothic Medium</family>
+            <pointsize>10</pointsize>
+           </font>
           </property>
           <property name="text">
            <string>Modifier</string>
@@ -1031,50 +1121,42 @@
          <widget class="QLabel" name="label_13">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>210</y>
+            <x>10</x>
+            <y>220</y>
             <width>171</width>
-            <height>16</height>
+            <height>31</height>
            </rect>
           </property>
           <property name="font">
            <font>
-            <pointsize>10</pointsize>
+            <family>French Script MT</family>
+            <pointsize>20</pointsize>
            </font>
           </property>
           <property name="text">
            <string>Description :</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_17">
-          <property name="geometry">
-           <rect>
-            <x>290</x>
-            <y>210</y>
-            <width>231</width>
-            <height>22</height>
-           </rect>
-          </property>
-         </widget>
          <widget class="QLabel" name="label_3">
           <property name="geometry">
            <rect>
-            <x>30</x>
+            <x>10</x>
             <y>170</y>
-            <width>161</width>
-            <height>16</height>
+            <width>191</width>
+            <height>31</height>
            </rect>
           </property>
           <property name="font">
            <font>
-            <pointsize>10</pointsize>
+            <family>French Script MT</family>
+            <pointsize>20</pointsize>
            </font>
           </property>
           <property name="text">
-           <string>Date_rec :</string>
+           <string>Date_reclamation :</string>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_4">
+         <widget class="QDateEdit" name="dateEdit_2">
           <property name="geometry">
            <rect>
             <x>290</x>
@@ -1082,6 +1164,67 @@
             <width>231</width>
             <height>22</height>
            </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_15">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>191</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>French Script MT</family>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Ref_reclamation :</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_14">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>70</y>
+            <width>231</width>
+            <height>22</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QTextEdit" name="textEdit_2">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>220</y>
+            <width>381</width>
+            <height>141</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_16">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>110</y>
+            <width>211</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>French Script MT</family>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Sujet du reclamation :</string>
           </property>
          </widget>
         </widget>
@@ -1098,11 +1241,17 @@
         <widget class="QLabel" name="label_9">
          <property name="geometry">
           <rect>
-           <x>160</x>
-           <y>270</y>
+           <x>210</x>
+           <y>290</y>
            <width>131</width>
-           <height>20</height>
+           <height>31</height>
           </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>French Script MT</family>
+           <pointsize>20</pointsize>
+          </font>
          </property>
          <property name="text">
           <string>Recherche:</string>
@@ -1111,21 +1260,53 @@
         <widget class="QComboBox" name="comboBox_6">
          <property name="geometry">
           <rect>
-           <x>40</x>
-           <y>300</y>
+           <x>100</x>
+           <y>330</y>
            <width>161</width>
            <height>22</height>
           </rect>
          </property>
+         <property name="font">
+          <font>
+           <family>Franklin Gothic Medium</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <item>
+          <property name="text">
+           <string>ref_rec</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>date_rec</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>sujet</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>description</string>
+          </property>
+         </item>
         </widget>
         <widget class="QPushButton" name="pushButton_18">
          <property name="geometry">
           <rect>
-           <x>440</x>
-           <y>360</y>
+           <x>430</x>
+           <y>400</y>
            <width>93</width>
            <height>28</height>
           </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Franklin Gothic Medium</family>
+           <pointsize>10</pointsize>
+          </font>
          </property>
          <property name="text">
           <string>Imprimer</string>
@@ -1134,25 +1315,40 @@
         <widget class="QLineEdit" name="lineEdit_7">
          <property name="geometry">
           <rect>
-           <x>220</x>
-           <y>300</y>
+           <x>300</x>
+           <y>330</y>
            <width>201</width>
            <height>21</height>
           </rect>
          </property>
         </widget>
+        <widget class="QPushButton" name="pushPDF1">
+         <property name="geometry">
+          <rect>
+           <x>330</x>
+           <y>400</y>
+           <width>93</width>
+           <height>28</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Franklin Gothic Medium</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>PDF</string>
+         </property>
+        </widget>
         <zorder>groupBox_5</zorder>
         <zorder>tabrec</zorder>
-        <zorder>label_14</zorder>
-        <zorder>lineEdit_12</zorder>
-        <zorder>label_15</zorder>
-        <zorder>lineEdit_14</zorder>
-        <zorder>label_16</zorder>
         <zorder>lineEdit_19</zorder>
         <zorder>label_9</zorder>
         <zorder>comboBox_6</zorder>
         <zorder>pushButton_18</zorder>
         <zorder>lineEdit_7</zorder>
+        <zorder>pushPDF1</zorder>
        </widget>
       </widget>
      </widget>

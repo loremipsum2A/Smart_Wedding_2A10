@@ -7,9 +7,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
     connexion c ;
     bool test = c.ouvrirconnecxion();
+    MainWindow w;
     if(test)
     {
         w.show();

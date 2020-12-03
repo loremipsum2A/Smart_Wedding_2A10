@@ -20,8 +20,7 @@ public:
     bool ajouter();
     QSqlQueryModel* afficher();
     bool supprimer(int);
-    bool modifier(int);
-    bool recherche (int);
+    QSqlQueryModel* rechercher(QString,QString);
 
 private:
     int ref_rec;

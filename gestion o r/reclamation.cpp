@@ -36,26 +36,22 @@ bool reclamation::ajouter()
 bool reclamation::supprimer(int ref_rec)
 {
     QSqlQuery query;
-         query.prepare(" Delete from REC where ref_rec=:ref_rec");
-         query.bindValue(":ref_rec",ref_rec);
+            query.prepare("select * from REC where ref_rec=:ref_rec");
+            query.bindValue(0, ref_rec);
+            query.exec();
+            if (query.next())
+            {
+             query.prepare(" Delete from REC where ref_rec=:ref_rec");
+             query.bindValue(0, ref_rec);
 
-        return query.exec();
+                    query.exec();
+                 return true;
+
+            }
+
+             return false;
 
 
-}
-bool reclamation::recherche(int ref_rec)
-{
-    QSqlQuery query;
-    int ligne =0;
-    query.prepare(" Select count(*) from REC where ref_rec=:ref_rec");
-    query.bindValue(":ref_rec",ref_rec);
-    if (query.next())
-    {ligne=query.value(0).toInt();}
-
-    if (ligne>0)
-            return true;
-            else
-            return false;
 }
 
 QSqlQueryModel* reclamation::afficher()
@@ -72,10 +68,11 @@ QSqlQueryModel* reclamation::afficher()
   return  model;
 }
 
-bool reclamation::modifier(int ref_rec)
+QSqlQueryModel* reclamation::rechercher(QString row,QString txt)
 {
-    QSqlQuery query;
-    QString ref_rec_string= QString::number(ref_rec);
-         query.prepare(" update REC set DATE_REC='"+date_rec+"',SUJET='"+sujet+"' ,DESCRIPTION='"+descritpion+"' where REF_REC='"+ref_rec+"'");
-         return query.exec();
+     QSqlQueryModel* model=new QSqlQueryModel();
+
+     model->setQuery("SELECT * FROM REC WHERE UPPER("+row+") LIKE UPPER('"+txt+"%')");
+
+     return model;
 }
