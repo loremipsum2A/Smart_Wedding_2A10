@@ -70,6 +70,10 @@ private slots:
     void on_rechercheres_textChanged(const QString &arg1);
     void remplir_cb_clientcin();
 
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_4_clicked();
+
 private:
     Ui::MainWindow *ui;
     Client c;
