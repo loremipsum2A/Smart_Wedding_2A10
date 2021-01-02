@@ -16,6 +16,7 @@
 
 
 
+
 #include <QPrintDialog>
 #include"QPainter"
 #include"QPdfWriter"
@@ -31,6 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
      , ui(new Ui::MainWindow)
 {
+    nbclient=0;
     ui->setupUi(this);
     MRE=QRegExp("^[0-9a-zA-Z]+([0-9a-zA-Z]*[-._+])*[0-9a-zA-Z]+@[0-9a-zA-Z]+([-.][0-9a-zA-Z]+)*([0-9a-zA-Z]*[.])[a-zA-Z]{2,6}$");
     ui->comboBox_2->setModel(c.afficher());
@@ -43,10 +45,38 @@ MainWindow::MainWindow(QWidget *parent)
     ui->comboBox_4->setModel(R.afficher());
     ui->tab_reservation->setModel(R.afficher());
     remplir_cb_clientcin();
+
+     int ret=A.connect_arduino();
+     switch(ret){
+     case(0):qDebug()<< "arduino is availble and connected to :"<< A.getarduino_port_name();
+         break;
+     case(1):qDebug()<< "arduino is availble but not connected to :"<< A.getarduino_port_name();
+         break;
+     case(-1):qDebug()<< "arduino is not availble";
+     }
+     QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
 }
 
 
+void MainWindow::update_label()
+{
+    data=A.read_from_arduino();
+    QString DataAsString = QString(data);
+    qDebug()<< data;
 
+
+    if (data == "1"){
+         nbclient++;
+         QString test=QString::number(nbclient);
+        ui->label_arduino->setText(test);
+    }
+    if (data == "2"){
+         nbclient--;
+         QString test=QString::number(nbclient);
+        ui->label_arduino->setText(test);
+    }
+
+}
 void MainWindow::remplir_cb_clientcin()
 {
 
@@ -253,11 +283,11 @@ void MainWindow::on_supprimer_reservation_clicked()
     msg.exec();
 }
 
- void MainWindow::on_comboBox_2_currentIndexChanged(const QString &arg1)
-{
- QString CIN=ui->comboBox_2->currentText();
-}
 
+void MainWindow::on_comboBox_2_currentIndexChanged(const QString &arg1)
+{
+QString CIN=ui->comboBox_2->currentText();
+}
 void MainWindow::on_comboBox_4_currentIndexChanged(const QString &arg1)
 {
  QString CIN_reservation=ui->comboBox_4->currentText();
