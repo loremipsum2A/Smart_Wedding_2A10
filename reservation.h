@@ -3,7 +3,8 @@
 #include<QString>
 #include<QSqlQueryModel>
 #include<QDate>
-
+#include "reservation.h"
+//tout le
 class reservation
 {
 public:
