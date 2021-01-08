@@ -5,7 +5,7 @@
 #include <QString>
 #include <QFileDialog>
 #include <QTextDocument>
-
+//
 
 Client::Client()
 {

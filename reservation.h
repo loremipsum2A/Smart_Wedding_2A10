@@ -3,7 +3,10 @@
 #include<QString>
 #include<QSqlQueryModel>
 #include<QDate>
+<<<<<<< HEAD
 #include "reservation.h"
+=======
+>>>>>>> 4f00f843afcdb778f75233acf25940670d89da8e
 //tout le
 class reservation
 {
