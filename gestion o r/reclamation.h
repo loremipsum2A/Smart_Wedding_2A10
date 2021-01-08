@@ -3,12 +3,15 @@
 #include <QString>
 #include <QSqlQueryModel>
 #include <QSqlQuery>
+#include <QComboBox>
+#include <QtDebug>
+#include <QObject>
 
 class reclamation
 {
 public:
     reclamation();
-    reclamation(int,QString,QString,QString);
+    reclamation(int,QString,QString,QString,int, QString);
     int getref_rec();
     QString getdate_rec();
     QString getsujet();
@@ -21,10 +24,12 @@ public:
     QSqlQueryModel* afficher();
     bool supprimer(int);
     QSqlQueryModel* rechercher(QString,QString);
+    void remplir(QComboBox*);
 
 private:
     int ref_rec;
-    QString date_rec , sujet , descritpion;
+    QString date_rec , sujet , descritpion, avis;
+    int id;
 
 };
 

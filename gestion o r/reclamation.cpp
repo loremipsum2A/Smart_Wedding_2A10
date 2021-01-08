@@ -2,13 +2,14 @@
 #include <QSqlQuery>
 #include <QtDebug>
 #include <QObject>
+#include <QComboBox>
 reclamation::reclamation()
 {
-ref_rec=0 ; date_rec="" ; sujet="";descritpion="";
+ref_rec=0 ; date_rec="" ; sujet="";descritpion="", avis="";
 }
 
-reclamation::reclamation(int ref_rec,QString date_rec,QString sujet,QString description)
-{this->ref_rec=ref_rec;this->date_rec=date_rec;this->sujet=sujet;this->descritpion=description;}
+reclamation::reclamation(int ref_rec,QString date_rec,QString sujet,QString description,int id, QString avis)
+{this->ref_rec=ref_rec;this->date_rec=date_rec;this->sujet=sujet;this->descritpion=description;this->id=id;this->avis = avis;}
 int reclamation:: getref_rec(){return ref_rec;}
 QString reclamation:: getdate_rec(){return date_rec;}
 QString reclamation:: getsujet(){return sujet;}
@@ -23,13 +24,16 @@ bool reclamation::ajouter()
 
   QSqlQuery query;
   QString ref_rec_string= QString::number(ref_rec);
+  QString id_string= QString::number(id);
 
-  query.prepare("INSERT INTO REC (ref_rec,date_rec,sujet,description) "
-                "VALUES (:ref_rec,:date_rec,:sujet,:description)");
+  query.prepare("INSERT INTO REC (ref_rec,date_rec,sujet,description,id, avis) "
+                "VALUES (:ref_rec,:date_rec,:sujet,:description,:id, :avis)");
   query.bindValue(":ref_rec", ref_rec_string);
   query.bindValue(":date_rec", date_rec);
   query.bindValue(":sujet",sujet);
   query.bindValue(":description", descritpion);
+  query.bindValue(":id",id_string);
+  query.bindValue(":avis",avis);
         return query.exec();
 
 }
@@ -51,7 +55,6 @@ bool reclamation::supprimer(int ref_rec)
 
              return false;
 
-
 }
 
 QSqlQueryModel* reclamation::afficher()
@@ -60,10 +63,6 @@ QSqlQueryModel* reclamation::afficher()
 
 
    model->setQuery("SELECT* FROM REC");
-   model->setHeaderData(0, Qt::Horizontal, QObject::tr("ref_rec"));
-   model->setHeaderData(1, Qt::Horizontal, QObject::tr("date_rec"));
-   model->setHeaderData(2, Qt::Horizontal, QObject::tr("sujet"));
-   model->setHeaderData(3, Qt::Horizontal, QObject::tr("description"));
 
   return  model;
 }
@@ -75,4 +74,14 @@ QSqlQueryModel* reclamation::rechercher(QString row,QString txt)
      model->setQuery("SELECT * FROM REC WHERE UPPER("+row+") LIKE UPPER('"+txt+"%')");
 
      return model;
+}
+
+void reclamation::remplir(QComboBox* c)
+{
+    QSqlQuery *query=new QSqlQuery();
+    QSqlQueryModel* model=new QSqlQueryModel();
+    query->prepare("SELECT ID FROM REC ");
+    query->exec();
+    model->setQuery(*query);
+    c->setModel(model);
 }
