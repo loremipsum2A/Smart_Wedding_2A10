@@ -38,6 +38,7 @@ gestion_emp::gestion_emp(QWidget *parent) :
 {
     ui->setupUi(this);
     son=new QSound(":/sons/click.wav");
+
     ui->cin_ajouter->setValidator(new QIntValidator(0, 99999999, this));
     ui->cin_modifier->setValidator(new QIntValidator(0, 99999999, this));
     ui->cin_supprimer->setValidator(new QIntValidator(0, 99999999, this));

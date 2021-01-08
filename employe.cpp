@@ -2,6 +2,7 @@
 #include <QSqlQuery>
 #include <QDebug>
 #include <QObject>
+#include <QChar>
 #include <QMessageBox>
 Employe::Employe()
 {
@@ -40,7 +41,8 @@ void Employe::setEtat(QString etat){this->etat=etat;}
 bool Employe::ajouter()
 {
     QSqlQuery query;
-
+    QMessageBox msgBox;
+    MRE=QRegExp("^[0-9a-zA-Z]+([0-9a-zA-Z]*[-._+])*[0-9a-zA-Z]+@[0-9a-zA-Z]+([-.][0-9a-zA-Z]+)*([0-9a-zA-Z]*[.])[a-zA-Z]{2,6}$");
     QString CIN_string=QString::number(CIN);
     QString tel_string=QString::number(tel);
     QString salaire_string=QString::number(salaire);
@@ -53,6 +55,14 @@ bool Employe::ajouter()
           query.bindValue(3, date_naissance);
           query.bindValue(4, adresse);
           query.bindValue(5, email);
+          bool verifier = MRE.exactMatch(email);
+
+          if(!verifier)
+          {
+              msgBox.setText("Verifier votre Email");
+              msgBox.exec();
+              return false;
+          }
           query.bindValue(6, tel_string);
           query.bindValue(7, fonction);
           query.bindValue(8, salaire_string);
@@ -89,6 +99,7 @@ bool Employe::supprimer(int CIN)
 bool Employe::modifier(int CIN)
 {
     QSqlQuery query;
+    QMessageBox msgBox;
     QString CIN_string=QString::number(CIN);
     QString tel_string=QString::number(tel);
     QString salaire_string=QString::number(salaire);
@@ -101,6 +112,14 @@ bool Employe::modifier(int CIN)
           query.bindValue(":date_naissance",date_naissance);
           query.bindValue(":adresse",adresse);
           query.bindValue(":email",email);
+          bool verifier = MRE.exactMatch(email);
+
+          if(!verifier)
+          {
+              msgBox.setText("Verifier votre Email");
+              msgBox.exec();
+              return false;
+          }
           query.bindValue(":tel",tel_string);
           query.bindValue(":fonction",fonction);
           query.bindValue(":salaire",salaire_string);

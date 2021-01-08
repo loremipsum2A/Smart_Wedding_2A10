@@ -39,6 +39,7 @@ private slots:
 
       void on_excel_clicked();
 
+
 private:
     Ui::gestion_cong *ui;
     Conge C;

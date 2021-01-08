@@ -6,7 +6,13 @@
 #include <QPropertyAnimation>
 #include"arduino.h"
 #include <QSound>
-
+#include<QVariant>
+#include <QtCharts>
+#include <QGraphicsItem>
+#include <QtCharts>
+#include <QBarSeries>
+#include <QBarSet>
+#include <QMainWindow>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class gestion_de_salle;
@@ -76,6 +82,8 @@ private slots:
 
     void on_captemp_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::gestion_de_salle *ui;
     Gestion_salle S;
@@ -83,6 +91,8 @@ private:
     QPropertyAnimation *animation;
     Arduino A ;
     QSound *son;
+    QMainWindow * window ;
+
 
 };
 

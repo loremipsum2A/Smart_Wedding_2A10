@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QObject>
 #include <QMessageBox>
+#include <QDate>
 
 Conge::Conge()
 {
@@ -30,7 +31,7 @@ void Conge::setEtat_c(QString etat_c){this->etat_c=etat_c;}
 bool Conge::ajouter()
 {
     QSqlQuery query;
-
+    QMessageBox msgBox;
     QString ref_string=QString::number(ref);
     QString CIN_string=QString::number(CIN);
 
@@ -43,7 +44,16 @@ bool Conge::ajouter()
           query.bindValue(":etat", etat_c);
           query.bindValue(":cin", CIN_string);
           query.bindValue(":date_fin", date_fin);
-
+          QDate date1Compare = QDate::fromString(date_deb,"dd/MM/yyyy");
+          QDate date2Compare = QDate::fromString(date_fin,"dd/MM/yyyy");
+          qint64 days = date2Compare.daysTo(date1Compare);
+          qDebug() << days;
+          if(days>=0)
+          {
+              msgBox.setText("Verifier la date");
+              msgBox.exec();
+              return false;
+          }
           return query.exec();
 }
 

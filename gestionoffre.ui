@@ -36,7 +36,7 @@
     </font>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="Ajouter_4">
     <attribute name="title">
@@ -576,6 +576,19 @@
       </property>
       <property name="text">
        <string>PDF</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>380</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Excel</string>
       </property>
      </widget>
     </widget>

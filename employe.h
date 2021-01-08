@@ -8,6 +8,7 @@ class Employe
 private:
     int CIN,tel,salaire;
     QString nom,prenom,date_naissance,adresse,email,fonction,etat;
+    QRegExp MRE ;
 
 public:
     Employe();

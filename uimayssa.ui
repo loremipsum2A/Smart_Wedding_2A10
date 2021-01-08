@@ -659,6 +659,19 @@
       <string>Quitter</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="chat1">
+     <property name="geometry">
+      <rect>
+       <x>760</x>
+       <y>230</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>chat</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

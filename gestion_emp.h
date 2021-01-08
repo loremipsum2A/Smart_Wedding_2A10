@@ -2,6 +2,7 @@
 #define GESTION_EMP_H
 
 #include <QDialog>
+#include <QRegularExpression>
 #include "employe.h"
 #include "gestion_cong.h"
 
@@ -47,6 +48,7 @@ private:
     Ui::gestion_emp *ui;
     Employe E;
     QSound *son;
+
 };
 
 #endif // GESTION_EMP_H

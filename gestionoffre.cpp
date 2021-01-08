@@ -267,3 +267,75 @@ void gestionoffre::on_quitter_bt_clicked()
 }
 
 
+
+void gestionoffre::on_pushButton_clicked()
+{
+    QTableView *table;
+
+                            table = ui->taboffre;
+
+
+                            QString filters("Excel Files (.xls)");
+
+                            QString defaultFilter("Excel Files (*.xls)");
+
+                            QString fileName = QFileDialog::getSaveFileName(0, "Save file", QCoreApplication::applicationDirPath(),
+
+                                               filters, &defaultFilter);
+
+                            QFile file(fileName);
+
+
+                            QAbstractItemModel *model =  table->model();
+
+                            if (file.open(QFile::WriteOnly | QFile::Truncate)) {
+
+                                QTextStream data(&file);
+
+                                QStringList strList;
+
+                                for (int i = 0; i < model->columnCount(); i++) {
+
+                                    if (model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString().length() > 0)
+
+                                        strList.append("\"" + model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString() + "\"");
+
+                                    else
+
+                                        strList.append("");
+
+                                }
+
+                                data << strList.join(";") << "\n";
+
+                                for (int i = 0; i < model->rowCount(); i++) {
+
+                                    strList.clear();
+
+                                    for (int j = 0; j < model->columnCount(); j++) {
+
+
+                                        if (model->data(model->index(i, j)).toString().length() > 0)
+
+                                            strList.append("\"" + model->data(model->index(i, j)).toString() + "\"");
+
+                                        else
+
+                                            strList.append("");
+
+                                    }
+
+                                    data << strList.join(";") + "\n";
+
+                                }
+
+                                file.close();
+
+                                QMessageBox::information(nullptr, QObject::tr("Export excel"),
+
+                                                          QObject::tr("Export avec succes .\n"
+
+                                                                      "Click OK to exit."), QMessageBox::Ok);
+            }
+
+}

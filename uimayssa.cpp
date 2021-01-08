@@ -18,6 +18,8 @@
 #include <QPropertyAnimation>
 #include <QTextDocument>
 #include <QFileDialog>
+#include "chat_client.h"
+#include "chat_server.h"
 
 uimayssa::uimayssa(QWidget *parent) :
     QDialog(parent),
@@ -39,8 +41,8 @@ uimayssa::uimayssa(QWidget *parent) :
         ui->comboBox_4->setModel(R.afficher());
         ui->tab_reservation->setModel(R.afficher());
         remplir_cb_clientcin();
-
-        /*int ret=A.connect_arduino();
+/*
+        int ret=A.connect_arduino();
              switch(ret){
              case(0):qDebug()<< "arduino is availble and connected to :"<< A.getarduino_port_name();
                  break;
@@ -49,12 +51,12 @@ uimayssa::uimayssa(QWidget *parent) :
              case(-1):qDebug()<< "arduino is not availble";
              }
              QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));*/
-        }
 
+}
 
         void uimayssa::update_label()
         {
-            /*data=A.read_from_arduino();
+     /*       data=A.read_from_arduino();
             QString DataAsString = QString(data);
             qDebug()<< data;
 
@@ -581,4 +583,12 @@ void uimayssa::on_pushButton_5_clicked()
 
                                                                           "Click OK to exit."), QMessageBox::Ok);
                 }
+}
+
+void uimayssa::on_chat1_clicked()
+{
+    chat_client *w =new chat_client();
+    w->show();
+    chat_server *s = new chat_server();
+    s->show();
 }

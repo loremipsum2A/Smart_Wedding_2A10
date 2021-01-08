@@ -77,7 +77,7 @@ void gestion_cong::on_pushButton_clicked()
     QString motif=ui->comboBox_motif->currentText();
 
 
-    Conge Cg(ref,CIN,date_deb,date_deb,motif);
+    Conge Cg(ref,CIN,date_deb,date_fin,motif);
     bool test=Cg.ajouter();
      QMessageBox msgBox;
 
@@ -116,6 +116,7 @@ void gestion_cong::on_bt_admin_clicked()
     {
         ui->tab_cong->setModel(C.afficher_admin("en cours"));
     }
+
 }
 
 void gestion_cong::on_bt_accepter_clicked()
@@ -129,6 +130,12 @@ void gestion_cong::on_bt_accepter_clicked()
         msg.setText("acceptation réussie");
         msg.exec();
     }
+    int cin=ui->comboBox_cin2->currentText().toInt();
+
+    if (C.rechercher(cin))
+    {
+            ui->tab_mesconges->setModel(C.afficher_mesconges(cin));
+    }
 }
 
 void gestion_cong::on_bt_refuser_clicked()
@@ -141,6 +148,12 @@ void gestion_cong::on_bt_refuser_clicked()
     {
         msg.setText("refus réussi");
         msg.exec();
+    }
+    int cin=ui->comboBox_cin2->currentText().toInt();
+
+    if (C.rechercher(cin))
+    {
+            ui->tab_mesconges->setModel(C.afficher_mesconges(cin));
     }
 }
 
@@ -291,3 +304,5 @@ void gestion_cong::on_excel_clicked()
                                                                           "Click OK to exit."), QMessageBox::Ok);
                 }
 }
+
+

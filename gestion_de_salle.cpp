@@ -29,7 +29,7 @@
 #include<QVariant>
 #include "ui_capteurtemp.h"
 #include "capteurtemp.h"
-
+#include "mainwindow.h"
 gestion_de_salle::gestion_de_salle(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::gestion_de_salle)
@@ -621,8 +621,8 @@ void gestion_de_salle ::on_Modifier_Modifiertheme_2_clicked()
 }
 
 void gestion_de_salle ::on_pushButton_7_clicked()
-{
-    /*
+{/*amal arduino
+
      son->play();
      A.getserial()->write("on") ;
 
@@ -635,7 +635,7 @@ void gestion_de_salle ::on_pushButton_7_clicked()
 
 void gestion_de_salle ::on_pushButton_6_clicked()
 {
-    /*
+/*
      son->play();
      A.getserial()->write("off") ;
     A.read_from_arduino() ;
@@ -659,4 +659,68 @@ void gestion_de_salle::on_captemp_clicked()
     Capteurtemp *cap = new Capteurtemp();
     cap->show();
     this->hide();
+}
+
+void gestion_de_salle::on_pushButton_2_clicked()
+{
+    //![1]
+        QBarSet *set0 = new QBarSet("champagne");
+        QBarSet *set1 = new QBarSet("princesse");
+        QBarSet *set2 = new QBarSet("mer");
+        QBarSet *set3 = new QBarSet("jungle");
+
+
+        *set0 << 1 << 2 << 3 << 4 << 5 << 6;
+        *set1 << 5 << 0 << 0 << 4 << 0 << 7;
+        *set2 << 3 << 5 << 8 << 13 << 8 << 5;
+        *set3 << 5 << 6 << 7 << 3 << 4 << 5;
+
+    //![1]
+
+    //![2]
+        QPercentBarSeries *series = new QPercentBarSeries();
+        series->append(set0);
+        series->append(set1);
+        series->append(set2);
+        series->append(set3);
+
+    //![2]
+
+    //![3]
+        QChart *chart = new QChart();
+        chart->addSeries(series);
+        chart->setTitle("Statestique des theme");
+        chart->setAnimationOptions(QChart::SeriesAnimations);
+    //![3]
+
+    //![4]
+        QStringList categories;
+        categories << "Jan" << "Feb" << "Mar" << "Apr" << "May" << "Jun";
+        QBarCategoryAxis *axisX = new QBarCategoryAxis();
+        axisX->append(categories);
+        chart->addAxis(axisX, Qt::AlignBottom);
+        series->attachAxis(axisX);
+        QValueAxis *axisY = new QValueAxis();
+        chart->addAxis(axisY, Qt::AlignLeft);
+        series->attachAxis(axisY);
+    //![4]
+
+    //![5]
+        chart->legend()->setVisible(true);
+        chart->legend()->setAlignment(Qt::AlignBottom);
+    //![5]
+
+    //![6]
+        QChartView *chartView = new QChartView(chart);
+        chartView->setRenderHint(QPainter::Antialiasing);
+    //![6]
+
+    //![7]
+
+        window = new MainWindow (this) ;
+
+        window->setCentralWidget(chartView);
+        window->resize(420, 300);
+        window->show();
+    //![7]
 }

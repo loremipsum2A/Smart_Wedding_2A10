@@ -49,6 +49,8 @@ private slots:
     void on_quitter_bt_clicked();
 
 
+    void on_pushButton_clicked();
+
 private:
     Ui::gestionoffre *ui;
     Offre O1;

@@ -46,6 +46,8 @@ private slots:
     void update_label();
     void on_pushButton_5_clicked();
 
+    void on_chat1_clicked();
+
 private:
     Ui::uimayssa *ui;
     Client c;

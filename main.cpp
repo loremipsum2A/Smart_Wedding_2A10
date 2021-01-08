@@ -15,9 +15,6 @@ int main(int argc, char *argv[])
     connection C;
     bool test= C.createConnection();
     MainWindow w;
-    Capteurtemp cap;
-    gestion_emp ge;
-    gestion_cong gc;
 
     QFile styleSheetFile(":/styleSheet/Integrid.qss");
         styleSheetFile.open(QFile::ReadOnly);
@@ -26,8 +23,6 @@ int main(int argc, char *argv[])
 
     if (test)
         //qDebug() <<"Connexion reussite";
-
-
         QMessageBox::information(nullptr, QObject::tr("Database is open"), QObject::tr("Connection successful\nClick ok to exit"), QMessageBox::Ok);
 
     else

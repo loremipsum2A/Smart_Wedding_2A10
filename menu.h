@@ -31,6 +31,8 @@ private slots:
 
     void on_ge_cong_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Menu *ui;
     QSound *son;

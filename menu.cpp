@@ -14,6 +14,8 @@
 #include "ui_gestion_de_salle.h"
 #include "gestion_cong.h"
 #include "ui_gestion_cong.h"
+#include "ui_historique_avis.h"
+#include "historique_avis.h"
 
 Menu::Menu(QWidget *parent) :
     QDialog(parent),
@@ -83,5 +85,13 @@ void Menu::on_ge_cong_clicked()
     son->play();
     gestion_cong *gc = new gestion_cong();
     gc->show();
+    this->hide();
+}
+
+void Menu::on_pushButton_clicked()
+{
+    son->play();
+    historique_avis *av = new historique_avis();
+    av->show();
     this->hide();
 }
