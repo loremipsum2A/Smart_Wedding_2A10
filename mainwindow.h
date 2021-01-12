@@ -1,60 +1,68 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include"client.h"
-#include"reservation.h"
-#include"arduino.h"
-#include <QRegularExpression>
+
 #include <QMainWindow>
+#include <QDialog>
+#include "troup.h"
+#include "buffet.h"
+//#include "arduino_v2.h"
 
 
-
-#include"QPainter"
-#include"QPdfWriter"
-#include"QDesktopServices"
-#include"QtPrintSupport/QPrinter"
-#include <QPropertyAnimation>
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+namespace Ui {
+class MainWindow;
+}
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
     void on_pushButton_clicked();
-    void on_pushButton_2_clicked();
-    void on_ajouter_clicked();
-    void on_supprimer_clicked();
-    void on_valider_reservation_clicked();
-    void on_pushButton_3_clicked();
-    void on_supprimer_reservation_clicked();
-    void on_modifier_clicked();
-    void on_tri_clicked();
-    void on_comboBox_2_currentIndexChanged(const QString &arg1);
-    void on_comboBox_4_currentIndexChanged(const QString &arg1);
-    void on_resmodif_clicked();
-    void on_recherche_textChanged(const QString &arg1);
-    void on_lineEdit_CIN_returnPressed();
-    void on_rechercheres_textChanged(const QString &arg1);
-    void remplir_cb_clientcin();
-    void on_pushButton_10_clicked();
-    void on_pushButton_4_clicked();
-    void update_label();
+
+    void on_ajouterchef_clicked();
+
+    void on_ajouterchef_clicked(bool checked);
+
+    void on_ajoutertroup_clicked();
+
+    void on_troup_sup_clicked();
+
+    void on_chef_sup_clicked();
+
+    void on_chef_sup_1_clicked();
+
+    void on_music_tri_clicked();
+
+    void on_gestion_music_tabBarClicked(int index);
+
+    void on_gestion_buffet_tabBarClicked(int index);
+
+    void on_chef_tri_clicked();
+
+    void on_le_recherche_3_textChanged(const QString &arg1);
+
+    void on_le_recherche_2_textChanged(const QString &arg1);
+
+    void on_nonsatisfait_buffet_clicked();
+
+    void on_nonsatisfait_buffet_2_clicked();
+
+    void on_satisfait_music_clicked();
+
+    void on_nonsatisfait_music_clicked();
 
 private:
     Ui::MainWindow *ui;
-    Client c;
-    reservation R;
-     QRegExp MRE ;
-     arduino A;
-     QByteArray data;
-     int nbclient;
+    buffet b_tmp,b;
+    troup t_tmp,t;
 
+   // QByteArray data; // variable contenant les données reçues
+
+   // arduino_v2 A; // objet temporaire
 };
+
 #endif // MAINWINDOW_H
